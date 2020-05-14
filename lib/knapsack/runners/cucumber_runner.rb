@@ -5,10 +5,10 @@ module Knapsack
         allocator = Knapsack::AllocatorBuilder.new(Knapsack::Adapters::CucumberAdapter).allocator
 
         Knapsack.logger.info
-        Knapsack.logger.info 'Report features:'
+        Knapsack.logger.info "#{TEST_ENV_NUMBER}: Report features:"
         Knapsack.logger.info allocator.report_node_tests
         Knapsack.logger.info
-        Knapsack.logger.info 'Leftover features:'
+        Knapsack.logger.info "#{TEST_ENV_NUMBER}: Leftover features:"
         Knapsack.logger.info allocator.leftover_node_tests
         Knapsack.logger.info
 
