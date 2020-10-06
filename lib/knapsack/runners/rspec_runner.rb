@@ -6,10 +6,10 @@ module Knapsack
 
         Knapsack.logger.info
         Knapsack.logger.info "NODE #{ENV['TEST_ENV_NUMBER'] || 0}: Report specs:".blue
-        Knapsack.logger.info allocator.report_node_tests.blue
+        Knapsack.logger.info allocator.report_node_tests.map { |f| f.blue }
         Knapsack.logger.info
         Knapsack.logger.info "NODE #{ENV['TEST_ENV_NUMBER'] || 0}: Leftover specs:".blue
-        Knapsack.logger.info allocator.leftover_node_tests.blue
+        Knapsack.logger.info allocator.leftover_node_tests.map { |f| f.blue }
         Knapsack.logger.info
 
         cmd = %Q[bundle exec bin/rspec #{args} --default-path #{allocator.test_dir} -- #{allocator.stringify_node_tests}]
